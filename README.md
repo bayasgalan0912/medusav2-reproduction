@@ -1,12 +1,33 @@
-## https://github.com/medusajs/medusa/issues/10797
+# Reproduction of Admin UI route issue: 
+- https://github.com/medusajs/medusa/issues/10797
 
-# Initial DB setup after clone
+- Admin UI routes doesn't exist in the sidebar on the production build.
+
+```sh
+# Command used to start production build
+medusa build  
+cp .env.prod .medusa/server/.env
+cd .medusa/server
+pnpm install
+pnpm start
+
+```
+- It is working on the dev server.
+```sh
+# Command used to start dev server
+pnpm dev
+```
+
+
+
+==========================
+## Initial DB setup after clone
 
 ```sh
 pnpm db-init
 ```
 
-# PM2 startup
+## PM2 startup
 
 ```sh
 
@@ -37,11 +58,3 @@ pm2 save
 pm2 startup
 pm2 save
 ```
-
-# TODO:
-
-1. gmail login:
-   - form input with email -> Sign in with selected email
-   - Error handling: Email already registered -> Duplicate email
-     ...
-2.
